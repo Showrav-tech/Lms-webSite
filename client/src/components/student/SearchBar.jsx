@@ -1,11 +1,11 @@
 import React from 'react'
 
-const App = () => {
+const SearchBar = () => {
   return (
     <div>
-     
+      
     </div>
   )
 }
 
-export default App
+export default SearchBar
