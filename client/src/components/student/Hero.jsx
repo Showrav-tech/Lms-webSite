@@ -1,22 +1,43 @@
-import React from 'react'
+import React from "react";
+import { assets } from "../../assets/assets";
+import SearchBar from "./SearchBar";
 
 const Hero = () => {
   return (
-    <div className='flex flex-col items-center justify-center w-full md:pt-36pt-20 px-7 md:px-0
-    space-y-7 text-center bg_gradient-to-b from-cyan-100/70'>
+    <section
+      className="w-full min-h-[500px] md:min-h-[600px]
+      bg-gradient-to-b from-cyan-100/70 to-white
+      flex flex-col items-center justify-center
+      px-6 text-center"
+    >
+      <h1
+        className="relative max-w-4xl
+        text-4xl md:text-6xl
+        font-bold text-gray-800 leading-tight"
+      >
+        Empower Your Future with Courses Tailored to{" "}
+        <span className="text-blue-600">
+          Your Goals.
+        </span>
 
-  <h1 className='md:text-home-heading-larger text-home-heading-small
-  relative font-bold text-gray-800 max-w-3xl mx-auto'>Empower Your Future with Courses Tailored to <span className='
-  text-blue-600'> Your Goals.
- </span><img src={assets.sketch} alt="sketch" className='md:block hidden absolute -button-7 right-0'/>
-  </h1>
-   <p className='md:block hidden text-gray-500 max-w-2xl mx-auto'>
-    Learn from expert instructors, work on real-world projects, and gain the skills
-     you need to achieve your academic and career aspirations.
-   </p>
-   <p>Learn from experts, build real skills, and achieve your career goals.</p>
-    </div>
-  )
-}
+        <img
+          src={assets.sketch}
+          alt=""
+          className="hidden md:block absolute -bottom-5 right-8"
+        />
+      </h1>
 
-export default Hero
+      <p className="hidden md:block mt-6 max-w-2xl text-lg text-gray-500">
+        Learn from expert instructors, work on real-world projects, and gain
+        the skills you need to achieve your academic and career aspirations.
+      </p>
+
+      <p className="md:hidden mt-5 max-w-sm text-gray-500">
+        Learn from experts, build real skills, and achieve your career goals.
+      </p>
+      <SearchBar/>
+    </section>
+  );
+};
+
+export default Hero;
