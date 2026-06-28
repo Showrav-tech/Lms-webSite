@@ -4,16 +4,16 @@ import SearchBar from "./SearchBar";
 
 const Hero = () => {
   return (
-    <section
-      className="w-full min-h-[500px] md:min-h-[600px]
-      bg-gradient-to-b from-cyan-100/70 to-white
-      flex flex-col items-center justify-center
-      px-6 text-center"
+    <div
+      className="w-full min-h-[550px] md:min-h-[650px]
+bg-gradient-to-b from-cyan-100/70 to-white
+flex flex-col items-center justify-center
+px-6 text-center"
     >
       <h1
-        className="relative max-w-4xl
-        text-4xl md:text-6xl
-        font-bold text-gray-800 leading-tight"
+       className="relative max-w-4xl
+text-4xl md:text-6xl
+font-bold text-gray-800 leading-tight"
       >
         Empower Your Future with Courses Tailored to{" "}
         <span className="text-blue-600">
@@ -27,16 +27,19 @@ const Hero = () => {
         />
       </h1>
 
-      <p className="hidden md:block mt-6 max-w-2xl text-lg text-gray-500">
+      <p className="hidden md:block mt-7 max-w-2xl text-lg text-gray-500">
         Learn from expert instructors, work on real-world projects, and gain
         the skills you need to achieve your academic and career aspirations.
       </p>
 
-      <p className="md:hidden mt-5 max-w-sm text-gray-500">
+      <p className="md:hidden mt-6 max-w-sm text-gray-500">
         Learn from experts, build real skills, and achieve your career goals.
       </p>
-      <SearchBar/>
-    </section>
+
+    <div className="mt-10 w-full flex justify-center">
+    <SearchBar />
+</div>
+   </div>
   );
 };
 
