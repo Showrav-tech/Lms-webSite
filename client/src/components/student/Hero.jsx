@@ -4,21 +4,10 @@ import SearchBar from "./SearchBar";
 
 const Hero = () => {
   return (
-    <div
-      className="w-full min-h-[550px] md:min-h-[650px]
-bg-gradient-to-b from-cyan-100/70 to-white
-flex flex-col items-center justify-center
-px-6 text-center"
-    >
-      <h1
-       className="relative max-w-4xl
-text-4xl md:text-6xl
-font-bold text-gray-800 leading-tight"
-      >
+<div className="w-full bg-gradient-to-b from-cyan-100/70 to-white flex flex-col items-center justify-center px-6 pt-16 md:pt-20 pb-10 text-center">
+      <h1 className="relative max-w-4xl text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
         Empower Your Future with Courses Tailored to{" "}
-        <span className="text-blue-600">
-          Your Goals.
-        </span>
+        <span className="text-blue-600">Your Goals.</span>
 
         <img
           src={assets.sketch}
@@ -36,10 +25,10 @@ font-bold text-gray-800 leading-tight"
         Learn from experts, build real skills, and achieve your career goals.
       </p>
 
-    <div className="mt-10 w-full flex justify-center">
-    <SearchBar />
-</div>
-   </div>
+      <div className="mt-10 w-full flex justify-center">
+        <SearchBar />
+      </div>
+    </div>
   );
 };
 

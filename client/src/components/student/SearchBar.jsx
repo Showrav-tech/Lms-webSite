@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
@@ -14,19 +15,9 @@ const SearchBar = ({ data }) => {
   return (
     <form
       onSubmit={onSearchhandler}
-className="max-w-xl w-full md:h-14 h-12
-flex items-center
-bg-white
-border border-gray-300
-rounded-lg
-overflow-hidden
-shadow-sm"
+      className="max-w-xl w-full md:h-14 h-12 flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden shadow-sm"
     >
-      <img
-        src={assets.search_icon}
-        alt="search"
-        className="w-10 px-3"
-      />
+      <img src={assets.search_icon} alt="search" className="w-10 px-3" />
 
       <input
         type="text"
@@ -38,16 +29,11 @@ shadow-sm"
 
       <button
         type="submit"
-     className="h-full bg-blue-600
-text-white
-px-8 md:px-10
-hover:bg-blue-700
-transition"
+        className="h-full bg-blue-600 text-white px-8 md:px-10 hover:bg-blue-700 transition"
       >
         Search
       </button>
     </form>
-    
   );
 };
 

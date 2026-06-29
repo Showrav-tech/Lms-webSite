@@ -17,16 +17,11 @@ const Navbar = () => {
       }`}
     >
       <Link to="/">
-        <img
-          src={assets.logo}
-          alt="Logo"
-          className="w-28 lg:w-32 cursor-pointer"
-        />
+        <img src={assets.logo} alt="Logo" className="w-28 lg:w-32 cursor-pointer" />
       </Link>
 
       {/* Desktop */}
       <div className="hidden md:flex items-center gap-5 text-gray-600">
-
         {user && (
           <>
             <button className="cursor-pointer hover:text-blue-600">
@@ -35,10 +30,7 @@ const Navbar = () => {
 
             <span>|</span>
 
-            <Link
-              to="/my-enrollments"
-              className="hover:text-blue-600"
-            >
+            <Link to="/my-enrollments" className="hover:text-blue-600">
               My Enrollments
             </Link>
           </>
@@ -58,12 +50,8 @@ const Navbar = () => {
 
       {/* Mobile */}
       <div className="md:hidden flex items-center gap-3">
-
         {user && (
-          <Link
-            to="/my-enrollments"
-            className="text-sm text-gray-600"
-          >
+          <Link to="/my-enrollments" className="text-sm text-gray-600">
             My Courses
           </Link>
         )}
@@ -72,11 +60,7 @@ const Navbar = () => {
           <UserButton />
         ) : (
           <button onClick={() => openSignIn()}>
-            <img
-              src={assets.user_icon}
-              alt="User"
-              className="w-7"
-            />
+            <img src={assets.user_icon} alt="User" className="w-7" />
           </button>
         )}
       </div>
