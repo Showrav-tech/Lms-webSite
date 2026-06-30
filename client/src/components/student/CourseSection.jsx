@@ -12,7 +12,7 @@ const CourseSection = () => {
         Learn from the best
       </h2>
       <p className="text-sm md:text-base text-gray-500 mt-5 max-w-2xl mx-auto leading-7">
-        Explore our most popular courses across technology, design, business, and more.
+        Explore our most popular courses across technology, design, business, and more.<br/>
         Learn in-demand skills from industry experts and accelerate your career.
       </p>
       <div className="grid grid-cols-4 px-4 md:px-0 md:my-16 my-10 gap-4">
