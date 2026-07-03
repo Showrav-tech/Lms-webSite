@@ -1,4 +1,5 @@
 import React from "react";
+import { assets } from "../../assets/assets";
 
 const CallToAction = () => {
   return (
@@ -26,7 +27,7 @@ const CallToAction = () => {
          </button>
           <button className="flex items-center gap-2 font-semibold text-gray-900 hover:text-blue-600 transition">
        Learn More
-         <span className="text-xl">→</span>
+      <img src={assets.arrow_icon} alt="arrow icon" />
       </button>
       </div>
       </div> 
