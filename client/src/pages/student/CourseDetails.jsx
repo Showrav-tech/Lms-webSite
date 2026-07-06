@@ -45,6 +45,28 @@ const CourseDetails = () => {
              </p>
       </div> 
 <p className='text-sm'>Course by <span className='text-shadow-blue-600'>GreateStack</span></p>
+<div className='pt-8 text-gray-800'>
+  <h2 className='text-xl font-semibold'>Course Structure</h2>
+  <div className='pt-5'>
+    {
+      coursedata.corseContent.map((chapter,index)=>(
+        <div className='border border-gray-300 bg-white mb-2rounded' key={index}>
+
+<div className='flex items-center justify-between px-4 py-3 cursor-ponter select-nonde'>
+
+
+<div className='flex items-center gap-2'>
+<img src={assets.down_arrow_icon} alt="arrow icon" />
+<p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
+</div>
+<p className='text-sm md:text-default'>{chapter.chapterContent.length}Lectures - {calculateChapterTime(chapter)}</p>
+   </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
 <div/>
 <div>
 
