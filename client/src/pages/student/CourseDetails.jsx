@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { assets } from '../../assets/assets';
+import humanizeDuration from 'humanize-duration';
 
 const CourseDetails = () => {
     const {id}=useParams();
@@ -60,6 +61,26 @@ const CourseDetails = () => {
 <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
 </div>
 <p className='text-sm md:text-default'>{chapter.chapterContent.length}Lectures - {calculateChapterTime(chapter)}</p>
+   </div>
+   <div>
+    <ul>{chapter.chapterContent.map((lecture,i)=>(
+
+<li key={i}>
+  <img src={assets.play_icon} alt="play icon" className='w-4 h-4 mt-1'/>
+<div>
+  <p>{lecture.lectureTitle}</p>
+  <div>
+    {lecture.isPreviewFree && <p>Preview</p>
+    }
+    <p>
+      {humanizeDuration()}
+      </p>
+  </div>
+</div>
+</li>
+
+    ))
+    }</ul>
    </div>
         </div>
       ))
