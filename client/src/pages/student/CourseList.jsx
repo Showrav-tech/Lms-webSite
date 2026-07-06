@@ -55,7 +55,7 @@ const CourseList = () => {
         <SearchBar data={input} />
       </div>
 
-      {/* Search Tag */}
+   
       {input && (
         <div className="inline-flex items-center gap-3 border rounded px-4 py-2 mt-8 text-gray-600">
           <p>{input}</p>
@@ -69,12 +69,12 @@ const CourseList = () => {
         </div>
       )}
 
-      {/* Courses */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-16">
         {filteredCourse.map((course, index) => (
           <CourseCard key={index} course={course} />
         ))}
       </div>
+      <footer/>
     </div>
   );
 };
