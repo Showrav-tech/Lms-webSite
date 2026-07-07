@@ -6,6 +6,7 @@ import humanizeDuration from 'humanize-duration';
 const CourseDetails = () => {
     const {id}=useParams();
     const[courseData,setCourseData]=useState(null);
+      const[openSections,setopenSections]=useState({});
     const {allCourses,calculateRating  , calculateNoofLecture,calculateCourseDuration,
      ulateChapterTime}=useContext(AppContext);
 
@@ -16,6 +17,15 @@ const CourseDetails = () => {
     useEffect(()=>{
       fetchCourseData()
     },[])
+    const toggleSection=(index)=>{
+      setopenSections((prev)=>{
+        {
+          ...prev,[index]:!prev[index]
+        }
+
+      })
+
+    }
   return  courseData ?(
 <>
     <div className='flex md:flex-row flex-col-reserve gap-10 relative items-start
@@ -53,7 +63,7 @@ const CourseDetails = () => {
       coursedata.corseContent.map((chapter,index)=>(
         <div className='border border-gray-300 bg-white mb-2rounded' key={index}>
 
-<div className='flex items-center justify-between px-4 py-3 cursor-ponter select-nonde'>
+<div className='flex items-center justify-between px-4 py-3 cursor-ponter select-nonde'onClick={()=>toggleSection(index)} >
 
 
 <div className='flex items-center gap-2'>
@@ -62,15 +72,17 @@ const CourseDetails = () => {
 </div>
 <p className='text-sm md:text-default'>{chapter.chapterContent.length}Lectures - {calculateChapterTime(chapter)}</p>
    </div>
-   <div>
-    <ul>{chapter.chapterContent.map((lecture,i)=>(
+   <div className={`overflow-hidden transition-all duration-300 ${openSection[index]?'max-h-96':'max-h-0'}`}>
+    <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600
+    border-t border-gray-300'>{chapter.chapterContent.map((lecture,i)=>(
 
-<li key={i}>
+<li key={i} className='flex items-start gap-2 py-1'>
   <img src={assets.play_icon} alt="play icon" className='w-4 h-4 mt-1'/>
-<div>
+<div className='flex items--center justify-between w-full
+text-gray-800 text-xs md:text-default' >
   <p>{lecture.lectureTitle}</p>
-  <div>
-    {lecture.isPreviewFree && <p>Preview</p>
+  <div className='flex gap-2'>
+    {lecture.isPreviewFree && <p className='text-blue-500'>Preview</p>
     }
     <p>
       {humanizeDuration()}
