@@ -1,5 +1,6 @@
 import React from 'react'
 import { AppContext } from '../../context/appContext'
+import React, { useContext, useState } from 'react';
 
 const MyEnrollments = () => {
   const {enrolledCourses,calculateCourseDuration,navigate}=useContext(AppContext);
