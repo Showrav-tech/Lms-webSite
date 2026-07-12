@@ -31,7 +31,7 @@ enrolledCourses.map((course)=>{
 
 useEffect(()=>{
   getCourseData()
-},[])
+},[enrolledCourses])
 
   return (
     <>
@@ -124,7 +124,9 @@ useEffect(()=>{
       </div>
           {/* Right colum */}
 
-      <div></div>
+      <div>
+        <img src={courseData ? courseData.courseThumbnail : ''} alt="" />
+      </div>
     </div>
     </>
   )
