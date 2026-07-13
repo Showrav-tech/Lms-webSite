@@ -92,31 +92,31 @@ useEffect(()=>{
                                       className='w-4 h-4 mt-1 flex-shrink-0'
                                     />
                                     <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
-                                      <p className='flex-1'>{lecture.lectureTitle}</p>
+                                  <p className='flex-1'>{lecture.lectureTitle}</p>
                                       <div className='flex gap-2 items-center flex-shrink-0 ml-2'>
                                         {lecture.lectureUrl && (
                                  <button
                                             onClick={() =>setPlayerData( {
                                            ...lecture,chapter: index +1,lecture:i+1
-                                            })}
+                                         })}
                                             className='text-blue-500 hover:text-blue-700 transition-colors focus:outline-none focus:underline px-2 py-1 bg-blue-50 hover:bg-blue-100 rounded'
                                      aria-label={`Preview ${lecture.lectureTitle}`}
                                           >
-                                            ▶ Watch
+                                         Watch
                                    </button>
                                         )}
                                         <p>
                                           {shortEnglishHumanizer(lecture.lectureDuration * 60 * 1000, {
                                             units: ['h', 'm'],
                                     round: true,
-                                          })}
+                                    })}
                                         </p>
                                       </div>
-                                    </div>
+                           </div>
                                   </li>
                                 );
                               })}
-                            </ul>
+                   </ul>
                           </div>
                         </div>
                       ))}
