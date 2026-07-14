@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { assets } from '../../assets/assets';
 import humanizeDuration from 'humanize-duration';
 import YouTube from 'react-youtube'
+import Rating from '../../components/student/Rating';
 
 const Player = () => {
   const {enrolledCourses,calculateChapterTime}=useContext(AppContext)
@@ -122,7 +123,12 @@ useEffect(()=>{
                         </div>
                       ))}
                     </div>
+                    <div className='flex items-center gap-2 py-3'>
+                      <h1 className='text-xl font-bold'>Rate this Course :</h1>
+                      <Rating initialRating={0}/>
+                    </div>
       </div>
+
           {/* Right colum */}
 
       <div className='md;mt-10'>
@@ -135,7 +141,7 @@ iframeClassName='w-full aspect-video'
   <p>
     {playerData.chapter}.{playerData.lecture} {playerData.lectureTitle}
   </p>
-  <butto className='text-blue-600'>{flase ? 'Completed':'Mark Complete'}</button>
+  <button className='text-blue-600'>{flase ? 'Completed':'Mark Complete'}</button>
 </div>
 
         </div>)
@@ -144,6 +150,7 @@ iframeClassName='w-full aspect-video'
 }
       </div>
     </div>
+ <Footer/>
     </>
   )
 }
