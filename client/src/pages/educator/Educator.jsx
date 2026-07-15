@@ -1,16 +1,22 @@
-import React from 'react'
-import {Outlet} from 'react-router-dom'
-import Navbar from '..'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../../components/educator/Navbar'; // ✅ This is the correct path for educator Navbar
+import Sidebar from '../../components/educator/Sidebar';
+import Footer from '../../components/educator/Footer';
+
 const Educator = () => {
   return (
     <div className='text-default min-h-screen bg-white'>
-      <h1>Educator</h1>
-      <div>
-        <Navbar/>
-        {<Outlet/>}
+      <Navbar />
+      <div className='flex'>
+        <Sidebar />
+        <div className='flex-1 p-4'>
+          <Outlet />
+        </div>
       </div>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Educator
+export default Educator;
