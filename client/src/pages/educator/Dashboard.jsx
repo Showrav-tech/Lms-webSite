@@ -33,12 +33,25 @@ const Dashboard = () => {
             </div>
           </div>
 
+          {/* Total Courses Card */}
+          <div className='flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md'>
+            <img src={assets.my_course_icon} alt="courses_icon" />
+            <div>
+              <p className='text-2xl font-medium text-gray-600'>
+                {dashboardData.totalCourses || 0}
+              </p>
+              <p className='text-base text-gray-500'>
+                Total Courses
+              </p>
+            </div>
+          </div>
+
           {/* Total Earnings Card */}
           <div className='flex items-center gap-3 shadow-card border border-blue-500 p-4 w-56 rounded-md'>
             <img src={assets.earning_icon} alt="earning_icon" />
             <div>
               <p className='text-2xl font-medium text-gray-600'>
-                {currency}{dashboardData.totalEarning || 0}
+                {currency}{dashboardData.totalEarnings || 0}
               </p>
               <p className='text-base text-gray-500'>
                 Total Earnings
@@ -67,11 +80,11 @@ const Dashboard = () => {
                     </td>
                     <td className='md:px-4 px-2 py-3 flex items-center space-x-3'>
                       <img
-                        src={item.student?.imageUrl || '/default-avatar.png'}
+                        src={item.student?.imageUrl || assets.profile_img}
                         alt="Profile"
                         className='w-9 h-9 rounded-full object-cover'
                       />
-                      <span className='truncate'>{item.student?.name || 'Unknown'}</span>
+                      <span className='truncate'>{item.student?.name || 'Great Stack'}</span>
                     </td>
                     <td className='px-4 py-3 truncate'>{item.courseTitle || 'N/A'}</td>
                   </tr>
