@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useMatch } from "react-router-dom";
+import { Routes, Route, useMatch, Navigate } from "react-router-dom";
 
 import Navbar from "./components/student/Navbar";
 import Loading from "./components/student/Loading";
@@ -33,7 +33,11 @@ const App = () => {
 
         <Route path="/my-enrollments" element={<MyEnrollments />} />
 
+        {/* Player route with courseId parameter */}
         <Route path="/player/:courseId" element={<Player />} />
+        
+        {/* Redirect /player to my-enrollments if no courseId */}
+        <Route path="/player" element={<Navigate to="/my-enrollments" replace />} />
 
         <Route path="/loading/:path" element={<Loading />} />
 

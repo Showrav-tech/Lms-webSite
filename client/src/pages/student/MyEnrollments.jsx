@@ -6,14 +6,10 @@ const MyEnrollments = () => {
   const navigate = useNavigate();
   const { enrolledCourses, calculateCourseDuration, loading } = useContext(AppContext);
   
-  // State for progress tracking (this should come from backend)
   const [progressArray, setProgressArray] = useState([]);
 
-  // Calculate progress for each course
   useEffect(() => {
     if (enrolledCourses && enrolledCourses.length > 0) {
-      // In production, fetch progress from backend
-      // For now, generate mock progress
       const progress = enrolledCourses.map((course) => {
         const totalLectures = calculateTotalLectures(course);
         const completed = Math.floor(Math.random() * (totalLectures + 1));
@@ -26,7 +22,6 @@ const MyEnrollments = () => {
     }
   }, [enrolledCourses]);
 
-  // Helper to calculate total lectures
   const calculateTotalLectures = (course) => {
     if (!course || !course.courseContent) return 0;
     let total = 0;
@@ -38,7 +33,16 @@ const MyEnrollments = () => {
     return total;
   };
 
-  // Handle loading state
+  // Handle navigation to player
+  const handleNavigateToPlayer = (courseId) => {
+    if (courseId) {
+      navigate(`/player/${courseId}`);
+    } else {
+      console.error('Course ID is missing');
+      alert('Cannot open player: Course ID is missing');
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
@@ -47,7 +51,6 @@ const MyEnrollments = () => {
     );
   }
 
-  // Handle empty state
   if (!enrolledCourses || enrolledCourses.length === 0) {
     return (
       <div className="md:px-36 px-8 pt-10">
@@ -55,7 +58,7 @@ const MyEnrollments = () => {
         <div className="text-center py-20">
           <p className="text-gray-500 text-lg">You haven't enrolled in any courses yet.</p>
           <button 
-            onClick={() => navigate('/courses')}
+            onClick={() => navigate('/course-list')}
             className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
           >
             Browse Courses
@@ -106,13 +109,7 @@ const MyEnrollments = () => {
                 <td className='px-4 py-3'>
                   <button 
                     className='px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2'
-                    onClick={() => {
-                      if (course._id) {
-                        navigate(`/player/${course._id}`);
-                      } else {
-                        console.error('Course ID is missing');
-                      }
-                    }}
+                    onClick={() => handleNavigateToPlayer(course._id)}
                   >
                     {progressArray[index] && progressArray[index].totalLectures > 0 && 
                      progressArray[index].lectureCompleted === progressArray[index].totalLectures 

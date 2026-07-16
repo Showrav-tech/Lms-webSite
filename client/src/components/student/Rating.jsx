@@ -15,14 +15,14 @@ const Rating = ({ initialRating, onRate }) => {
   }, [initialRating]);
 
   return (
-    <div>
+    <div className="flex">
       {Array.from({ length: 5 }, (_, index) => {
         const starValue = index + 1;
         return (
           <span 
             key={index} 
-            className={`text-xl sm:text-2xl cursor-pointer transition-colors ${
-              starValue <= rating ? 'text-yellow-500' : 'text-gray-400'
+            className={`text-2xl sm:text-3xl cursor-pointer transition-colors ${
+              starValue <= rating ? 'text-yellow-500' : 'text-gray-300'
             }`}
             onClick={() => handleRating(starValue)}
           >
