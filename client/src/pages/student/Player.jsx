@@ -177,7 +177,7 @@ const Player = () => {
                         <li key={lectureIndex} className='flex items-start gap-2 py-1'>
                           <img
                             src={isWatching ? assets.blue_tick_icon : assets.play_icon}
-                            alt='Play icon'
+                             alt='Play icon'
                             className='w-4 h-4 mt-1 flex-shrink-0'
                           />
                           <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
